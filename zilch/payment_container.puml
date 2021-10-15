@@ -1,0 +1,13 @@
+@startuml
+!include https://raw.githubusercontent.com/plantuml-stdlib/C4-PlantUML/master/C4_Container.puml
+
+System(mastercard_gateway, "Mastercard API Gateway")
+
+System_Boundary(payment, "Payment service") {
+  Container(api, "API")
+  ContainerDb(db, "Database", "RDBMS")
+}
+
+Rel(mastercard_gateway, api, "Authorize payment", "REST/gRPC")
+Rel(api, db, "Record transaction and Update account balance")
+@enduml

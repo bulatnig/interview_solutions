@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+
+{% block title %}Transactions{% endblock %}
+
+{% block content %}
+    <h2>Transactions</h2>
+    <table border="1">
+    <tr>
+        <th>Created at</th>
+        <th>Amount</th>
+        <th>Currency</th>
+        <th>Account id</th>
+        <th>Client name</th>
+        <th>Details</th>
+    </tr>
+        {% for transaction in object_list %}
+            <tr>
+                <td>{{ transaction.created_at }}</td>
+                <td>{{ transaction.amount }}</td>
+                <td>{{ transaction.currency }}</td>
+                <td>{{ transaction.account.id }}</td>
+                <td>{{ transaction.account.client.name }}</td>
+                <td><a href="{% url 'transaction-details' transaction.id %}">Details</a></td>
+            </tr>
+        {% endfor %}
+    </table>
+{% endblock %}

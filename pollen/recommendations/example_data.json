@@ -1,0 +1,54 @@
+[
+{
+  "model": "rewards.reward",
+  "pk": 1,
+  "fields": {
+    "name": "General Ticket",
+    "points": 100,
+    "max_per_user": 5
+  }
+},
+{
+  "model": "rewards.reward",
+  "pk": 2,
+  "fields": {
+    "name": "VIP Ticket",
+    "points": 1000,
+    "max_per_user": 1
+  }
+},
+{
+  "model": "rewards.reward",
+  "pk": 3,
+  "fields": {
+    "name": "Weekend Ticket",
+    "points": 250,
+    "max_per_user": 2
+  }
+},
+{
+  "model": "rewards.reward",
+  "pk": 4,
+  "fields": {
+    "name": "Free Drink Voucher",
+    "points": 50,
+    "max_per_user": 10
+  }
+},
+{
+  "model": "rewards.reward",
+  "pk": 5,
+  "fields": {
+    "name": "Free Limo to event",
+    "points": 5000,
+    "max_per_user": 1
+  }
+},
+{
+  "model": "rewards.recommendation",
+  "pk": 1,
+  "fields": {
+    "user_id": 1
+  }
+}
+]

@@ -1,0 +1,57 @@
+[
+{
+  "model": "ticketing_api.user",
+  "pk": 1,
+  "fields": {
+    "name": "John Doe",
+    "points": 100
+  }
+},
+{
+  "model": "ticketing_api.user",
+  "pk": 2,
+  "fields": {
+    "name": "Jane Doe",
+    "points": 150
+  }
+},
+{
+  "model": "ticketing_api.ticket",
+  "pk": 1,
+  "fields": {
+    "name": "Cheap ticket",
+    "price": 20.0,
+    "reward_points": 50
+  }
+},
+{
+  "model": "ticketing_api.ticket",
+  "pk": 2,
+  "fields": {
+    "name": "Expensive ticket",
+    "price": 50.0,
+    "reward_points": 100
+  }
+},
+{
+  "model": "ticketing_api.order",
+  "pk": 1,
+  "fields": {
+    "user_id": 1,
+    "tickets": [
+      2
+    ]
+  }
+},
+{
+  "model": "ticketing_api.order",
+  "pk": 2,
+  "fields": {
+    "user_id": 2,
+    "tickets": [
+      1,
+      2
+    ]
+  }
+}
+]

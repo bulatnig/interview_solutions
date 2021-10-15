@@ -1,0 +1,24 @@
+@startuml
+!include https://raw.githubusercontent.com/plantuml-stdlib/C4-PlantUML/master/C4_Context.puml
+
+Person(user, "User")
+
+System_Ext(apple, "Apple Pay")
+System_Ext(google, "Google Pay")
+System_Ext(mastercard, "Mastercard")
+
+System(zilch, "Zilch")
+
+System_Ext(bank, "User bank account")
+
+Rel(user, apple, "Pays by")
+Rel(user, google, "Pays by")
+
+Rel(apple, mastercard, "Pays by")
+Rel(google, mastercard, "Pays by")
+
+Rel(mastercard, zilch, "Authorized by")
+
+Rel(zilch, bank, "Debit 25% of purchase")
+
+@enduml

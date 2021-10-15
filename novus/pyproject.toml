@@ -1,0 +1,13 @@
+[tool.poetry]
+name = "novus"
+version = "0.1.0"
+description = "Software engineer - Interview assignment"
+authors = ["Bulat Nigmatullin <bulatnig@protonmail.com>"]
+
+[tool.poetry.dependencies]
+python = "^3.9"
+psycopg2-binary = "^2.8.6"
+Django = "^3.2"
+
+[tool.poetry.dev-dependencies]
+pytest = "^3.4"

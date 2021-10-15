@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <title>Bank details</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+</head>
+
+<body>
+
+<div th:switch="${bankDetails}">
+    <h2 th:case="null">No bank details yet!</h2>
+    <div th:case="*">
+        <h2>Bank details</h2>
+        <table>
+            <thead>
+            <tr>
+                <th>Name</th>
+                <th>Card number</th>
+                <th>Expiry date</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr th:each="bankDetail : ${bankDetails}">
+                <td th:text="${bankDetail.name}"></td>
+                <td th:text="${bankDetail.cardNumber}"></td>
+                <td th:text="${bankDetail.expiryDate}"></td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+
+<form action="/upload" method="post" enctype="multipart/form-data">
+    Select CSV to upload:
+    <input type="file" name="file" id="file">
+    <input type="submit" value="Upload CSV" name="submit">
+</form>
+
+</body>
+
+</html>

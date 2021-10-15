@@ -1,0 +1,23 @@
+@startuml
+!include https://raw.githubusercontent.com/plantuml-stdlib/C4-PlantUML/master/C4_Context.puml
+
+System_Ext(mastercard, "Mastercard")
+
+System_Boundary(zilch, "Zilch") {
+    System_Boundary(external, "External VPC") {
+        System(mastercard_gateway, "Mastercard API Gateway")
+    }
+    System_Boundary(internal, "Internal VPC") {
+        System(payment, "Payment service")
+        System(bank_gateway, "Bank Gateway")
+    }
+}
+
+System_Ext(bank, "User bank")
+
+Rel(mastercard, mastercard_gateway, "Authorize payment")
+Rel(mastercard_gateway, payment, "Process payment")
+Rel(payment, bank_gateway, "Debit 25%")
+Rel(bank_gateway, bank, "Debit user bank account")
+
+@enduml
